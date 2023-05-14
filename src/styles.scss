@@ -70,6 +70,7 @@ form {
         font-size: 13px;
         font-weight: 500;
         color: var(--text-color-2);
+        margin-bottom: 3px;
     }
     input, textarea {
         width: 100%;
@@ -112,5 +113,10 @@ form {
     img {
         width: 15px;
         margin-right: 10px;
+    }
+}
+pagination-controls {
+    ul {
+        padding-left: 0 !important;
     }
 }

@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
     query: string = '';
     page: number = 1;
     limit: number = 20;
+    totalCount: number = 0;
     subs: SubSink = new SubSink();
     products: Array<any> = [];
     constructor(
@@ -37,6 +38,7 @@ export class HomeComponent implements OnInit {
         this.productsService.getProducts((this.page - 1), this.limit, this.query).subscribe({
             next: (res: any) => {
                 this.products = res.data;
+                this.totalCount = res.pagination.total
             }
         })
     }
