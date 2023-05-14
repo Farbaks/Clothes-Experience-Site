@@ -1,0 +1,40 @@
+<div class="d-flex flex-column align-items-center">
+    <h2>Create new account</h2>
+    <p>Fill in your details below to create an account.</p>
+    <form [formGroup]="form" (ngSubmit)="signUp()">
+        <app-error-message [message]="errorMessage"></app-error-message>
+        <app-success-message [message]="successMessage" [(visible)]="showSuccessMessage"></app-success-message>
+        <div class="input-box"
+            [class.error-input]="form['controls']['firstName'].errors && form['controls']['firstName'].touched">
+            <label>First Name</label>
+            <input type="text" placeholder="John" autocomplete="given-name" autofocus formControlName="firstName" />
+        </div>
+        <div class="input-box"
+            [class.error-input]="form['controls']['lastName'].errors && form['controls']['lastName'].touched">
+            <label>Last Name</label>
+            <input type="text" placeholder="Doe" autocomplete="family-name" formControlName="lastName" />
+        </div>
+        <div class="input-box"
+            [class.error-input]="form['controls']['phoneNumber'].errors && form['controls']['phoneNumber'].touched">
+            <label>Phone Number</label>
+            <input type="text" placeholder="+447549403720" autocomplete="tel" formControlName="phoneNumber" />
+        </div>
+        <div class="input-box"
+            [class.error-input]="form['controls']['emailAddress'].errors && form['controls']['emailAddress'].touched">
+            <label>Email Address</label>
+            <input type="email" placeholder="johndoe@example.com" autocomplete="email" formControlName="emailAddress" />
+        </div>
+        <div class="input-box"
+            [class.error-input]="form['controls']['password'].errors && form['controls']['password'].touched">
+            <label>Password</label>
+            <input type="email" placeholder="******" autocomplete="new-password" formControlName="password" />
+        </div>
+        <div class="input-box"
+            [class.error-input]="form['controls']['confirmPassword'].errors && form['controls']['confirmPassword'].touched">
+            <label>Confirm Password</label>
+            <input type="email" placeholder="johndoe@example.com" autocomplete="new-password"
+                formControlName="confirmPassword" />
+        </div>
+        <button class="button-primary"  [ladda]="processLoading">Sign Up</button>
+    </form>
+</div>

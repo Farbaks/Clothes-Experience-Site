@@ -1,0 +1,29 @@
+:root {
+    --header-background: #ffffff;
+    --body-background: #fafafa;
+
+
+
+    // Text colors
+    --text-color-1: rgb(20, 20, 20);
+    --text-color-2: rgb(120, 120, 120);
+    --text-color-3: rgb(240, 240, 240);
+    --text-color-4: rgb(60, 60, 60);
+    --text-color-5: #482BE7;
+
+    // Box Shadows
+    --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    --box-shadow-2: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    // Padding
+    --side-padding: 10%;
+    @media screen and(max-width: 768px) {
+        --side-padding: 5%;
+    }
+    @media screen and(max-width: 768px) {
+        --side-padding: 5%;
+    }
+    @media screen and(max-width: 540px) {
+        --side-padding: 16px;
+    }
+}

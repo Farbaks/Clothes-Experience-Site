@@ -1,0 +1,10 @@
+.product-list {
+    width: 100%;
+    margin-top: 60px;
+    --ItemsPerRow: 2;
+    --ItemSpacing: 30px;
+    gap: 65px var(--ItemSpacing);
+    .item {
+        width: calc( (100% - ( (var(--ItemsPerRow)) * var(--ItemSpacing))) / 3);
+    }
+}
