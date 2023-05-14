@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Signup } from 'src/app/models/user';
 import { GeneralService } from 'src/app/services/general.service';
@@ -16,10 +16,10 @@ export class SignupComponent implements OnInit {
     successMessage: string = '';
     showSuccessMessage: boolean = false;
     processLoading: boolean = false;
-    form: FormGroup;
+    form: UntypedFormGroup;
     subs: SubSink = new SubSink();
     constructor(
-        private fb: FormBuilder,
+        private fb: UntypedFormBuilder,
         private usersService: UsersService,
         private generalService: GeneralService,
         private router: Router
