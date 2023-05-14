@@ -1,23 +1,29 @@
-
 <div>
-    <p class="nav" routerLink="../">Back</p>
-    <div class="page d-flex align-items-start justify-content-between">
+    <p class="nav d-flex align-items-center" routerLink="../">
+        <img src="assets/images/arrow-left.svg" />
+        Back
+    </p>
+    <div class="page d-flex align-items-start justify-content-between" *ngIf="product">
         <div class="left">
             <div class="image">
-                <img src="assets/images/product.png" />
+                <img [src]="product.imageUrl" />
             </div>
-           
+
         </div>
         <div class="right">
-            <h2 class="name">Personalized Bracelet</h2>
-            <p class="price">$29</p>
+            <p class="text">Sold by: <b>{{product.user.firstName | titlecase}}</b></p>
+            <h2 class="name">{{product.name}}</h2>
+            <p class="price">{{product.price | currency:'USD':'symbol-narrow'}}</p>
             <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nisi aperiam illo deserunt quia harum corporis
-                vero qui consectetur, iste in reprehenderit architecto reiciendis impedit, dolores, magnam voluptatum dicta
-                nesciunt
+                {{product.description}}
             </p>
-            <p class="text">Color: <b>Pink</b></p>
-            <p class="text">Size: <b>Large</b></p>
+            <p class="text">Color: <b>{{product.color | titlecase}}</b></p>
+            <p class="text">Size: <b>{{product.size | titlecase}}</b></p>
+            <a class="action-link d-flex align-items-center" *ngIf="user && user._id == product.user._id"
+            [routerLink]="'/edit-product/'+product.slug">
+                Edit
+                <img src="assets/images/edit.svg" />
+            </a>
         </div>
     </div>
 </div>

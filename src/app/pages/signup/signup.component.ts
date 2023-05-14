@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Signup } from 'src/app/models/user';
 import { GeneralService } from 'src/app/services/general.service';
@@ -12,14 +12,14 @@ import { SubSink } from 'subsink';
     styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-    errorMessage: string = "";
+    errorMessage: string = '';
     successMessage: string = '';
     showSuccessMessage: boolean = false;
     processLoading: boolean = false;
-    form: UntypedFormGroup;
+    form: FormGroup;
     subs: SubSink = new SubSink();
     constructor(
-        private fb: UntypedFormBuilder,
+        private fb: FormBuilder,
         private usersService: UsersService,
         private generalService: GeneralService,
         private router: Router
@@ -35,6 +35,10 @@ export class SignupComponent implements OnInit {
     }
 
     ngOnInit(): void {
+    }
+
+    ngOnDestroy() {
+        this.subs.unsubscribe();
     }
 
     signUp() {
@@ -66,7 +70,7 @@ export class SignupComponent implements OnInit {
             next: (res: any) => {
                 this.processLoading = false;
 
-                if (!/^20.*/.test(res.status)) {
+                if (!/^20.*/.test(res.statusCode)) {
                     this.errorMessage = res.message;
                     return;
                 }
@@ -78,7 +82,7 @@ export class SignupComponent implements OnInit {
 
                 setTimeout(() => {
                     this.router.navigateByUrl('/');
-                }, 3000);
+                }, 1500);
             },
             error: (error: any) => {
                 this.processLoading = false;

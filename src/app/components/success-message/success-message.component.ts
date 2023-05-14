@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@
     styleUrls: ['./success-message.component.scss']
 })
 export class SuccessMessageComponent implements OnInit {
-    @Input() message: string = "";
+    @Input() message: string = '';
     @Input() visible: boolean = false;
     @Output() visibleChange: EventEmitter<boolean> = new EventEmitter();
     constructor() { }

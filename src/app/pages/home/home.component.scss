@@ -4,7 +4,18 @@
     --ItemsPerRow: 2;
     --ItemSpacing: 30px;
     gap: 65px var(--ItemSpacing);
-    .item {
-        width: calc( (100% - ( (var(--ItemsPerRow)) * var(--ItemSpacing))) / 3);
+    @media screen and (max-width: 625px) {
+        --ItemsPerRow: 1;
     }
+    .item {
+        width: calc((100% - ((var(--ItemsPerRow)) * var(--ItemSpacing))) / 3);
+        text-decoration: none;
+        @media screen and (max-width: 625px) {
+            width: calc((100% - ((var(--ItemsPerRow)) * var(--ItemSpacing))) / 2);
+        }
+    }
+}
+.pagination {
+    width: 100%;
+    margin-top: 40px;
 }

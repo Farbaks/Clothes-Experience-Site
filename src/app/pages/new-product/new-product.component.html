@@ -1,1 +1,51 @@
-<p>new-product works!</p>
+<div>
+    <p class="nav d-flex align-items-center" routerLink="/">
+        <img src="assets/images/arrow-left.svg" />
+        Back
+    </p>
+    <div class="d-flex flex-column align-items-center">
+        <h2>Create new product</h2>
+        <p>Fill in your details below to create a product.</p>
+        <form [formGroup]="form" (ngSubmit)="signUp()">
+            <app-error-message [message]="errorMessage"></app-error-message>
+            <app-success-message [message]="successMessage" [(visible)]="showSuccessMessage"></app-success-message>
+            <div class="input-box"
+                [class.error-input]="form['controls']['name'].errors && form['controls']['name'].touched">
+                <label>Product Name</label>
+                <input type="text" placeholder="Hoodie " autofocus formControlName="name" />
+            </div>
+            <div class="input-box"
+                [class.error-input]="form['controls']['description'].errors && form['controls']['description'].touched">
+                <label>Description</label>
+                <textarea placeholder="This is a brief description about this product..."
+                    formControlName="description"></textarea>
+            </div>
+            <div class="input-box"
+                [class.error-input]="form['controls']['price'].errors && form['controls']['price'].touched">
+                <label>Price</label>
+                <input type="number" placeholder="1000" formControlName="price" />
+            </div>
+            <div class="input-box"
+                [class.error-input]="form['controls']['size'].errors && form['controls']['size'].touched">
+                <label>Size</label>
+                <input type="text" placeholder="Medium" formControlName="size" />
+            </div>
+            <div class="input-box"
+                [class.error-input]="form['controls']['slug'].errors && form['controls']['slug'].touched">
+                <label>Slug</label>
+                <input type="text" placeholder="pink-hoodie" formControlName="slug" />
+            </div>
+            <div class="input-box"
+                [class.error-input]="form['controls']['color'].errors && form['controls']['color'].touched">
+                <label>Color</label>
+                <input type="text" placeholder="Pink" formControlName="color" />
+            </div>
+            <div class="input-box"
+                [class.error-input]="form['controls']['imageUrl'].errors && form['controls']['imageUrl'].touched">
+                <label>Color</label>
+                <input type="text" placeholder="http://path/to/image-location.png" formControlName="imageUrl" />
+            </div>
+            <button class="button-primary" [ladda]="processLoading">Add product</button>
+        </form>
+    </div>
+</div>

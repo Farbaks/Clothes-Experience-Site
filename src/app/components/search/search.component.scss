@@ -3,6 +3,9 @@
     padding: 10px 20px;
     background: #f2f4f8;
     border-radius: 12px;
+    @media screen and (max-width: 625px) {
+        width: 100%;
+    }
     img {
         width: 15px;
         height: 25px;

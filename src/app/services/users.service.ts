@@ -16,7 +16,7 @@ export class UsersService {
     }
 
     signin(data: Signin) {
-        return this.apiService.post('signin', data);
+        return this.apiService.post('users/login', data);
     }
 
     refreshToken() {

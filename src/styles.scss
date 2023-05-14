@@ -41,6 +41,20 @@ h6 {
     margin: 0;
 }
 
+form {
+    width: 40%;
+    margin-top: 20px;
+    @media screen and (max-width: 768px) {
+        width: 60%;
+    }
+    @media screen and (max-width: 625px) {
+        width: 65%;
+    }
+    @media screen and (max-width: 540px) {
+        width: 100%;
+    }
+}
+
 .input-box {
     width: 100%;
     display: flex;
@@ -48,7 +62,7 @@ h6 {
     align-items: flex-start;
     margin-bottom: 15px;
     &:focus-within {
-        input {
+        input, textarea {
             border: solid 1px var(--text-color-5);
         }
     }
@@ -57,15 +71,18 @@ h6 {
         font-weight: 500;
         color: var(--text-color-2);
     }
-    input {
+    input, textarea {
         width: 100%;
         border: solid 1px rgb(210, 210, 210);
         border-radius: 10px;
         padding: 10px;
     }
+    textarea {
+        height: 120px;
+    }
 }
 .error-input {
-    input {
+    input, textarea {
         border: solid 1px red;
     }
 }
@@ -79,4 +96,21 @@ h6 {
     font-size: 15px;
     font-weight: 500;
     margin-top: 10px;
+}
+.nav {
+    width: max-content;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 10px 25px;
+    margin-bottom: 30px;
+    border-radius: 25px;
+    border: solid 1px rgb(230,230,230);
+    cursor: pointer;
+    &:hover {
+        background: rgb(240,240,240);
+    }
+    img {
+        width: 15px;
+        margin-right: 10px;
+    }
 }

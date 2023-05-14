@@ -1,8 +1,12 @@
 <div class="page">
-    <app-search></app-search>
-    <div class="product-list d-flex align-items-start justify-content-start flex-wrap">
-        <div class="item" *ngFor="let n of [1,1,1,1]" routerLink="wer">
-            <app-product></app-product>
-        </div>
+    <app-search [(query)]="query" (queryChange)="search()"></app-search>
+    <div class="product-list d-flex align-items-start justify-content-start flex-wrap" *ngIf="products.length > 0">
+        <a class="item" *ngFor="let product of products | paginate: { itemsPerPage: limit, currentPage: page }" [routerLink]="product.slug">
+            <app-product [product]="product"></app-product>
+        </a>
     </div>
+    <div class="pagination d-flex justify-content-center">
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    </div>
+    
 </div>

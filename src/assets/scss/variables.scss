@@ -17,13 +17,13 @@
 
     // Padding
     --side-padding: 10%;
-    @media screen and(max-width: 768px) {
+    @media screen and (max-width: 768px) {
         --side-padding: 5%;
     }
-    @media screen and(max-width: 768px) {
+    @media screen and (max-width: 768px) {
         --side-padding: 5%;
     }
-    @media screen and(max-width: 540px) {
+    @media screen and (max-width: 540px) {
         --side-padding: 16px;
     }
 }

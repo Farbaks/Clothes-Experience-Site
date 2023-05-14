@@ -33,7 +33,7 @@ export class GeneralService {
             return undefined
         }
 
-        return (JSON.parse(res)).data;
+        return (JSON.parse(res));
     }
 
     getToken() {
@@ -48,7 +48,7 @@ export class GeneralService {
 
     logoutUser() {
         sessionStorage.clear();
-        window.location.replace('/signin');
+        window.location.replace('/');
     }
 
 }

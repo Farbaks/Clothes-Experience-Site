@@ -1,1 +1,19 @@
-<p>login works!</p>
+<div class="d-flex flex-column align-items-center">
+    <h2>Sign In</h2>
+    <p>Enter your details below to login.</p>
+    <form [formGroup]="form" (ngSubmit)="signIn()">
+        <app-error-message [message]="errorMessage"></app-error-message>
+        <app-success-message [message]="successMessage" [(visible)]="showSuccessMessage"></app-success-message>
+        <div class="input-box"
+            [class.error-input]="form['controls']['emailAddress'].errors && form['controls']['emailAddress'].touched">
+            <label>Email Address</label>
+            <input type="email" placeholder="johndoe@example.com" autocomplete="email" formControlName="emailAddress" />
+        </div>
+        <div class="input-box"
+            [class.error-input]="form['controls']['password'].errors && form['controls']['password'].touched">
+            <label>Password</label>
+            <input type="password" placeholder="******" autocomplete="new-password" formControlName="password" />
+        </div>
+        <button class="button-primary"  [ladda]="processLoading">Login In</button>
+    </form>
+</div>

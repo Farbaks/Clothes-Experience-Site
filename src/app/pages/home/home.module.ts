@@ -6,7 +6,7 @@ import { HomeComponent } from './home.component';
 import { SearchModule } from 'src/app/components/search/search.module';
 import { ProductModule } from 'src/app/components/product/product.module';
 import { FormsModule } from '@angular/forms';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     HomeRoutingModule,
     FormsModule,
     SearchModule,
-    ProductModule
+    ProductModule,
+    NgxPaginationModule
   ]
 })
 export class HomeModule { }

@@ -27,12 +27,12 @@
         <div class="input-box"
             [class.error-input]="form['controls']['password'].errors && form['controls']['password'].touched">
             <label>Password</label>
-            <input type="email" placeholder="******" autocomplete="new-password" formControlName="password" />
+            <input type="password" placeholder="******" autocomplete="new-password" formControlName="password" />
         </div>
         <div class="input-box"
             [class.error-input]="form['controls']['confirmPassword'].errors && form['controls']['confirmPassword'].touched">
             <label>Confirm Password</label>
-            <input type="email" placeholder="johndoe@example.com" autocomplete="new-password"
+            <input type="password" placeholder="johndoe@example.com" autocomplete="new-password"
                 formControlName="confirmPassword" />
         </div>
         <button class="button-primary"  [ladda]="processLoading">Sign Up</button>
