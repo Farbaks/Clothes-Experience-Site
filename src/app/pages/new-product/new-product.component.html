@@ -42,7 +42,7 @@
             </div>
             <div class="input-box"
                 [class.error-input]="form['controls']['imageUrl'].errors && form['controls']['imageUrl'].touched">
-                <label>Image</label>
+                <label>Link to Image</label>
                 <input type="text" placeholder="http://path/to/image-location.png" formControlName="imageUrl" />
             </div>
             <button class="button-primary" [ladda]="processLoading">Add product</button>
